@@ -1,0 +1,17 @@
+- name: install seurat packages (puoi usare R normale ma entrando con lo user di rstudio)
+  template:
+    src: install-seurat.j2
+    dest: /home/{{ username }}/install-seurat.sh
+    mode: 777
+  become: yes
+  become_user: "{{ username }}"
+
+- name: install seurat lib 
+  command: bash  /home/{{ username }}/install-seurat.sh
+  become: yes
+  become_user: "{{ username }}"
+
+- name: restart rstudio-server
+  systemd:
+    state: restarted
+    name: rstudio-server.service

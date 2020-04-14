@@ -1,0 +1,10 @@
+---
+# tasks file for rstudio-server-seurat
+
+- include: requirements.yml
+
+- include: rstudio-server.yml
+
+- include: rstudio-user.yml
+
+- include: install-seuratpk.yml

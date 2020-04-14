@@ -1,4 +1,4 @@
-- name: install seurat packages (puoi usare R normale ma entrando con lo user di rstudio)
+- name: install seurat packages
   template:
     src: install-seurat.j2
     dest: /home/{{ username }}/install-seurat.sh

@@ -1,14 +1,16 @@
-- name: download rstudio
+---
+
+- name: download rstudio-server rpm package
   get_url: 
     url: https://download2.rstudio.org/server/centos6/x86_64/rstudio-server-rhel-1.2.5033-x86_64.rpm
     dest: /opt/rstudio-server-rhel-1.2.5033-x86_64.rpm
 
-- name: install rstudio package
+- name: install rstudio-server package
   yum:
     name: /opt/rstudio-server-rhel-1.2.5033-x86_64.rpm
     state: present
-    
-- name: remove rstudio rpm
+   
+- name: remove rstudio-server rpm
   file:
     path: /opt/rstudio-server-rhel-1.2.5033-x86_64.rpm
     state: absent

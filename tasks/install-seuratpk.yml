@@ -1,4 +1,6 @@
-- name: install seurat packages
+---
+
+- name: upload the seurat script for the installation
   template:
     src: install-seurat.j2
     dest: /home/{{ username }}/install-seurat.sh
@@ -6,7 +8,7 @@
   become: yes
   become_user: "{{ username }}"
 
-- name: install seurat lib 
+- name: install seurat package
   command: bash  /home/{{ username }}/install-seurat.sh
   become: yes
   become_user: "{{ username }}"

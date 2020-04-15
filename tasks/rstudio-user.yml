@@ -1,3 +1,4 @@
+---
 
 - name: create rstudio user and set rstudio pssword
   user: 
@@ -6,7 +7,7 @@
     password: "{{ password | string | password_hash('sha512') }}"
     update_password: on_create
 
-- name: create user directory for library
+- name: create user directory for rstudio-packages
   file:
     path: /home/{{ username }}/R/x86_64-redhat-linux-gnu-library/3.6
     state: directory

@@ -1,5 +1,9 @@
 ---
-- hosts: localhost
-  remote_user: root
+- name: Deploy seurat-rstudio-server
+  hosts: seurat-test
+  become: yes
+  vars:
+    - username: studio
+    - password: jenkinsprova
   roles:
-    - rstudio-server-seurat
+    - role: rstudio-server-seurat 

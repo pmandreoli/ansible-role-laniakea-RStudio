@@ -4,6 +4,6 @@
   become: yes
   vars:
     - username: studio
-    - password: jenkinsprova
+    - password: jenkins2prova
   roles:
     - role: ../.. 

@@ -5,7 +5,7 @@ Role to install rstudio-server  complete with Seurat packages on a Centos7 Virtu
 
 Requirements
 ------------
-host need port 80 opened
+host need port 80 open
 
 Role Variables
 --------------

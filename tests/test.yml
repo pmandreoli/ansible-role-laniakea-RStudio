@@ -6,4 +6,4 @@
     - username: studio
     - password: jenkinsprova
   roles:
-    - role: pmandreoli.rstudio_server_seurat_ansible_role 
+    - role: ../.. 

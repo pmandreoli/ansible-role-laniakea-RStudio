@@ -1,0 +1,6 @@
+---
+
+- name: restart rstudio-server
+  systemd:
+    state: restarted
+    name: rstudio-server.service

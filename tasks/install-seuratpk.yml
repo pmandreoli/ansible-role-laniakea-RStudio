@@ -12,8 +12,3 @@
   command: bash  /home/{{ username }}/install-seurat.sh
   become: yes
   become_user: "{{ username }}"
-
-- name: restart rstudio-server
-  systemd:
-    state: restarted
-    name: rstudio-server.service

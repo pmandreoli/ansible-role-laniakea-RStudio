@@ -2,3 +2,8 @@
 # defaults file for rstudio-server-seurat
 username: <something>
 password: <something>
+
+# set to true to install Seurat package
+install_Seu: false
+# port to expose
+port: 80

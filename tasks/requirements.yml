@@ -1,21 +1,22 @@
 ---
 
-- name: install requirements for rstudio-server 
-  yum:
-    name: 
-      - epel-release
-      - wget
-      - vim
-
 - name: update and upgrade the sistem
   yum:
     name: '*'
     state: latest
 
+- name: install requirements for rstudio-server 
+  yum:
+    name: 
+      - R
+      - epel-release
+      - wget
+      - vim
+
 - name: install requirements for Seurat
   yum: 
     name:
-      - R
       - openssl-devel 
       - libcurl-devel
       - hdf5-devel
+  when: install_Seu == "true"

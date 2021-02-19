@@ -8,3 +8,6 @@
 - include: rstudio-user.yml
 
 - include: install-seuratpk.yml
+  when: install_Seu == "true"
+
+- meta: flush_handlers

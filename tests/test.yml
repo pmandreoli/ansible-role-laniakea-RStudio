@@ -1,6 +1,6 @@
 ---
 - name: Deploy seurat-rstudio-server
-  hosts: seurat-test
+  hosts: localhost
   become: yes
   vars:
     - username: studio

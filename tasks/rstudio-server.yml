@@ -18,6 +18,6 @@
 - name: configure rstudio port
   lineinfile:
     path: /etc/rstudio/rserver.conf
-    line: www-port=80 
+    line: "www-port={{ port }}" 
     
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "install.packages('BiocManager', repos='https://cran.stat.unipd.it', dependencies=TRUE, lib='/home/{{ username }}/R/x86_64-redhat-linux-gnu-library/3.6'  )" | R --no-save ;
+echo "install.packages('BiocManager', repos='https://cran.stat.unipd.it', dependencies=TRUE, lib='/home/{{ username }}/R/x86_64-redhat-linux-gnu-library/{{ R_VERSION }}'  )" | R --no-save ;
 
 echo "BiocManager::install('multtest')" | R --no-save ;
 
-echo "install.packages('Seurat', repos='https://cran.stat.unipd.it', dependencies=TRUE, lib='/home/{{ username }}/R/x86_64-redhat-linux-gnu-library/3.6'  )" | R --no-save ;
+echo "install.packages('Seurat', repos='https://cran.stat.unipd.it', dependencies=TRUE, lib='/home/{{ username }}/R/x86_64-redhat-linux-gnu-library/{{ R_VERSION }}'  )" | R --no-save ;
 

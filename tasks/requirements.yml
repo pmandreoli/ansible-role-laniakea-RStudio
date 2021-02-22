@@ -1,22 +1,49 @@
 ---
 
-- name: update and upgrade the sistem
-  yum:
-    name: '*'
-    state: latest
+#- name: update and upgrade the sistem
+#  yum:
+#    name: '*'
+#    state: latest
 
-- name: install requirements for rstudio-server 
-  yum:
+
+- name: install general requirements
+  package:
     name: 
-      - R
       - epel-release
       - wget
       - vim
+    use: yum
 
-- name: install requirements for Seurat
-  yum: 
-    name:
-      - openssl-devel 
-      - libcurl-devel
-      - hdf5-devel
-  when: install_Seu == "true"
+- name: Download specific R rpm and 
+  get_url:
+    url: "https://cdn.rstudio.com/r/centos-7/pkgs/R-{{ R_VERSION }}-1-1.x86_64.rpm"
+    dest: "/opt/R-{{ R_VERSION }}-1-1.x86_64.rpm"
+
+- name: install R package
+  package:
+    name: "/opt/R-{{ R_VERSION }}-1-1.x86_64.rpm"
+    state: present
+    use: yum
+
+- name: symlink to bin
+  file:
+    src: '/opt/R/{{ R_VERSION }}/bin/{{ item }}'
+    dest: '/usr/bin/{{ item }}'
+    state: link
+  with_items:
+    - R
+    - Rscript
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

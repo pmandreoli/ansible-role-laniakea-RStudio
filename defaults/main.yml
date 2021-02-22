@@ -4,6 +4,7 @@ username: <something>
 password: <something>
 
 # set to true to install Seurat package
-install_Seu: false
+install_Seu: true
 # port to expose
 port: 80
+R_VERSION: 4.0.0 

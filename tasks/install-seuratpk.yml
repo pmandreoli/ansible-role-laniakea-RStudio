@@ -1,5 +1,14 @@
 ---
 
+
+- name: install requirements for Seurat
+  package: 
+    name:
+      - openssl-devel 
+      - libcurl-devel
+      - hdf5-devel
+    use: yum
+
 - name: upload the seurat script for the installation
   template:
     src: install-seurat.j2

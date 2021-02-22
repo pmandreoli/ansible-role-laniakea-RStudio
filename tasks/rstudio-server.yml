@@ -14,7 +14,7 @@
 - name: configure rstudio port
   lineinfile:
     path: /etc/rstudio/rserver.conf
-    line: "www-port={{ port }}" 
+    line: "www-port={{ rstudio_port }}" 
     state: present
     
 

@@ -3,10 +3,10 @@
 
 - include: requirements.yml
 
-- include: rstudio-server.yml
+- include: rs_server.yml
 
-- include: rstudio-user.yml
+- include: rs_user.yml
 
-- include: install-seuratpk.yml
-  when: install_Seu| bool  == true
+- include: install_seurat.yml
+  when: install_Seu|bool  == true
 

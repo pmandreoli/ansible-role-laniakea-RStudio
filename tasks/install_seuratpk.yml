@@ -1,0 +1,17 @@
+---
+
+
+- name: install requirements for Seurat
+  package: 
+    name:
+      - "@Development tools" 
+      - libxml2-devel
+      - openssl-devel 
+      - libcurl-devel
+      - hdf5-devel
+    use: yum
+
+- name: install seurat package
+  command: R -e "install.packages('Seurat', repos='https://cran.rstudio.com/')" --no-save 
+  become: yes
+  become_user: root

@@ -1,0 +1,20 @@
+---
+
+- name: download rstudio-server rpm package
+  get_url: 
+    url: https://download2.rstudio.org/server/centos7/x86_64/rstudio-server-rhel-1.4.1103-x86_64.rpm
+    dest: /opt/rstudio-server-rhel-1.4.1103-x86_64.rpm
+
+- name: install rstudio-server package
+  package:
+    name: /opt/rstudio-server-rhel-1.4.1103-x86_64.rpm
+    state: present
+    use: yum
+
+- name: configure rstudio port
+  lineinfile:
+    path: /etc/rstudio/rserver.conf
+    line: "www-port={{ rstudio_port }}" 
+    state: present
+    
+

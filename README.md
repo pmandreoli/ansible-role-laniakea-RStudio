@@ -1,34 +1,48 @@
 Role Name
 =========
 
-Role to install rstudio-server  complete with Seurat packages on a Centos7 Virtual Machine
+Role to install rstudio-server on a Centos7 Virtual Machine and create a new user.
+tested using ansible 2.3 on CentOS7.
 
 Requirements
 ------------
-host need port 80 open
+ansible > 2.3
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+``username:`` rstudio user username (default: ``studio``) 
+
+``install_Seu:`` bool, if true install R Seurat package (default: ``false``)
+
+``rstudio_port:`` port to expose rstudio on http: (default:``8080``)
+
+``R_VERSION:`` version of R to install (default: ``4.0.0``)
+
+``role_debug:`` debug (default: ``false``)
 
 Dependencies
 ------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+ansible version 2.3
 
 Example Playbook
 ----------------
+testing playbook ``test.yml`` present under test directory.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+command:
+
+``ansible-playbook test.yml -e ansible_python_interpreter=/usr/bin/python`` 
 
 ```
 ---
 - name: Deploy seurat-rstudio-server
-  hosts: seurat-test
+  hosts: localhost
   become: yes
+  vars:
+    - username: user4
   roles:
-    - { role: /path/to/role/rstudio-server-seurat }
+    - role: ansible-role-laniakea-RStudio 
+
 ```
 
 License
@@ -40,3 +54,5 @@ Author Information
 ------------------
 
 Pietro Mandreoli
+email: pietro.mandreoli@unimi.it 
+

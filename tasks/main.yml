@@ -7,6 +7,6 @@
 
 - include: rs_user.yml
 
-- include: install_seurat.yml
+- include: install_seuratpk.yml
   when: install_Seu|bool  == true
 

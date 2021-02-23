@@ -1,17 +1,17 @@
 ---
 
-
-- name: upload the seurat script for the installation
+- name: use template 
   template:
     src: pwd_generator.j2
     dest: /opt/pwd_generator.py
     mode: 777
 
 - name: Create galaxy db random passwd
-  command: "/opt/pwd_generator.py -l -p 8"
+  command: "/opt/pwd_generator.py -l 8 -p "
   register: random_pwd
 
-- debug: print password
+- name: print password
+  debug: 
     var: random_pwd
   when: role_debug|bool == true
 
@@ -21,6 +21,13 @@
     state: present
     password: "{{ random_pwd.stdout | string |  password_hash('sha512') }}"
     update_password: on_create
+
+- name: save password on file
+  copy:
+    content: '{{ random_pwd.stdout}}'
+    dest: /home/{{ username }}/pssw.txt
+  become: yes
+  become_user: "{{ username }}"
 
 - name: create user directory for rstudio-packages
   file:

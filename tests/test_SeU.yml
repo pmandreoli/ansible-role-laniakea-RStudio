@@ -4,5 +4,6 @@
   become: yes
   vars:
     - username: user4
+    - install_Seu: true
   roles:
     - role: ../.. 

@@ -1,7 +1,7 @@
 galaxy_info:
   author: Pietro Mandreoli, Marco Tangaro
   description: Install RStudio
-  company:   company: Università degli Studi di Milano, IBIOM-CNR
+  company: Università degli Studi di Milano, IBIOM-CNR
   role_name: rstudio
   min_ansible_version: 2.3
   license: GPLv3

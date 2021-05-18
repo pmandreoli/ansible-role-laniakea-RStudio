@@ -3,8 +3,8 @@ galaxy_info:
   description: Install RStudio
   company:   company: Università degli Studi di Milano, IBIOM-CNR
   role_name: rstudio
-  license: GPLv3
   min_ansible_version: 2.3
+  license: GPLv3
   platforms:
     #- name: Ubuntu
     #  versions: 

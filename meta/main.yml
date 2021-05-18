@@ -2,6 +2,7 @@ galaxy_info:
   author: Pietro Mandreoli, Marco Tangaro
   description: Install RStudio
   company:   company: Università degli Studi di Milano, IBIOM-CNR
+  role_name: rstudio
   license: GPLv3
   min_ansible_version: 2.3
   platforms:
@@ -11,10 +12,6 @@ galaxy_info:
     - name: EL
       versions:
         - 7
-  galaxy_tags:
-    - galaxy
-    - web
-
   galaxy_tags:
     - rstudio
     - laniakea

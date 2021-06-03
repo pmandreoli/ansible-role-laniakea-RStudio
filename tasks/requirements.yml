@@ -1,18 +1,10 @@
 ---
-
-#- name: update and upgrade the sistem
-#  yum:
-#    name: '*'
-#    state: latest
-
-
 - name: install general requirements
   package:
     name: 
       - epel-release
       - wget
       - vim
-    use: yum
 
 - name: Download specific R rpm and 
   get_url:
